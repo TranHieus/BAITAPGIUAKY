@@ -1,0 +1,147 @@
+:root {
+    --bg-body: #f8fafc;
+    --card-bg: #ffffff;
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --teal-color: #0d9488;
+    --teal-hover: #0f766e;
+    --facebook-color: #1877f2;
+    --facebook-hover: #0d65d9;
+    --text-dark: #0f172a;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --input-focus-border: #93c5fd;
+    --radius-card: 12px;
+    --radius-input: 8px;
+}
+
+body {
+    background-color: var(--bg-body);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--text-dark);
+    -webkit-font-smoothing: antialiased;
+}
+
+.max-w-1100 {
+    max-width: 900px;
+}
+.fs-7 { font-size: 0.85rem; }
+.fs-8 { font-size: 0.775rem; }
+.navbar-wrapper {
+    background-color: #1e293b;
+}
+
+.custom-dark-navbar {
+    background-color: #1e293b !important;
+}
+.custom-dark-navbar .nav-link {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.custom-dark-navbar .nav-link:hover,
+.custom-dark-navbar .nav-link.active {
+    color: #ffffff;
+}
+
+.search-box-custom input {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+}
+
+.search-box-custom input::placeholder {
+    color: #94a3b8;
+}
+.minimal-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-card);
+    padding: 32px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 2px -1px rgba(0, 0, 0, 0.02);
+    transition: box-shadow 0.2s ease;
+}
+
+.minimal-card:hover {
+    box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.05);
+}
+
+.card-header-clean {
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 16px;
+}
+.form-label-minimal {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.custom-input {
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-input);
+    font-size: 0.875rem;
+    padding: 0.55rem 0.85rem;
+    color: var(--text-dark);
+    background-color: #fff;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.custom-input:focus {
+    border-color: var(--input-focus-border);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    outline: none;
+}
+
+.custom-input::placeholder {
+    color: #cbd5e1;
+}
+
+.custom-input-group {
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-input) 0 0 var(--radius-input);
+    color: var(--text-muted);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    border-radius: var(--radius-input);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+.btn-teal {
+    background-color: var(--teal-color);
+    border-color: var(--teal-color);
+    border-radius: var(--radius-input);
+}
+
+.btn-teal:hover {
+    background-color: var(--teal-hover);
+    border-color: var(--teal-hover);
+}
+
+.btn-facebook {
+    background-color: var(--facebook-color);
+    color: #ffffff;
+    border-color: var(--facebook-color);
+    border-radius: var(--radius-input);
+}
+
+.btn-facebook:hover {
+    background-color: var(--facebook-hover);
+    border-color: var(--facebook-hover);
+    color: #ffffff;
+}
+
+.footer-minimal {
+    background-color: #ffffff;
+}

@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Star Cinema - Rạp Chiếu Phim</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../25050011_tranminhhieu_tuan9_10_css/stylebai3.css"/>
+</head>
+<body>
+
+<div id="loadingScreen">
+  <div class="loader-logo"><span>Star</span> Cinema</div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+</div>
+
+<div id="toastContainer" class="toast-container-custom"></div>
+
+<div class="topbar">
+  <div class="container-fluid px-4">
+    <div class="d-flex justify-content-between align-items-center">
+      <span><i class="bi bi-telephone-fill me-1"></i> Hotline: 1900 6017 &nbsp;|&nbsp;
+            <i class="bi bi-clock-fill me-1"></i> 8:00 - 22:00</span>
+      <div class="d-flex align-items-center gap-3">
+        <div class="lang-switch d-flex align-items-center">
+          <button class="lang-btn active">VN</button>
+          <span> | </span>
+          <button class="lang-btn">EN</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="navbar main-navbar navbar-expand-lg sticky-top">
+  <div class="container-fluid px-4">
+    <!-- LOGO -->
+    <a class="navbar-brand logo-wrap" href="#">
+      <div class="logo-icon-wrap">
+        <div class="logo-ring">★</div>
+      </div>
+      <div class="logo-text-wrap">
+        <div class="logo-name"><span>Star</span> Cinema</div>
+        <div class="logo-tagline">Trải nghiệm đỉnh cao</div>
+      </div>
+    </a>
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" style="border-color: rgba(255,255,255,0.1);">
+      <i class="bi bi-list" style="color: #fff; font-size: 1.5rem;"></i>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link active" href="#">Mua Vé</a></li>
+        <li class="nav-item"><span class="nav-divider">|</span></li>
+        <li class="nav-item"><a class="nav-link" href="#">Phim</a></li>
+        <li class="nav-item"><span class="nav-divider">|</span></li>
+        <li class="nav-item"><a class="nav-link" href="#">Rạp</a></li>
+        <li class="nav-item"><span class="nav-divider">|</span></li>
+        <li class="nav-item"><a class="nav-link" href="#">Khuyến Mãi</a></li>
+        <li class="nav-item"><span class="nav-divider">|</span></li>
+        <li class="nav-item"><a class="nav-link" href="#">Thành Viên</a></li>
+        <li class="nav-item ms-3">
+          <button class="nav-link btn-nav-login" data-bs-toggle="modal" data-bs-target="#authModal">
+            <i class="bi bi-person-circle me-1"></i> Đăng nhập
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="hero-section">
+  <div class="container-fluid px-0">
+    <div class="row g-0">
+
+      <div class="col-lg-9">
+        <div id="mainCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="../25050011_tranminhhieu_tuan9_10_images/venom.jpg" alt="Venom"/>
+              <div class="carousel-caption-custom">
+                <span class="caption-badge">13+</span>
+                <h2 class="caption-title">Venom The Last Dance</h2>
+                <div class="caption-meta">
+                  <span class="caption-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></span>
+                  <span class="dot">•</span> 109 Phút <span class="dot">•</span> Hành động / Viễn tưởng
+                </div>
+                <p class="caption-desc">Tom Hardy đã xác nhận rằng phần phim "Venom: The Last Dance" (Venom: Kèo Cuối, phát hành năm 2024) là bộ phim cuối cùng anh thủ vai nhân vật Eddie Brock / Venom</p>
+                <div class="caption-actions">
+                  <a href="#" class="btn-hero-primary" data-bs-toggle="modal" data-bs-target="#authModal">
+                    <i class="bi bi-ticket-perforated"></i> Mua Vé Ngay
+                  </a>
+                  <a href="#" class="btn-hero-outline">
+                    <i class="bi bi-play-circle"></i> Xem Trailer
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="../25050011_tranminhhieu_tuan9_10_images/moana.jpg" alt="Moana"/>
+              <div class="carousel-caption-custom">
+                <span class="caption-badge">Mọi lứa tuổi</span>
+                <h2 class="caption-title">Hành trình của Moana</h2>
+                <div class="caption-meta">
+                  <span class="caption-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i></span>
+                  <span class="dot">•</span> 107 Phút <span class="dot">•</span> Hoạt hình / Phiêu lưu
+                </div>
+                <p class="caption-desc">Hành trình của Moana là một bộ phim hoạt hình máy tính thể loại nhạc kịch, phim hài, phiêu lưu, kỳ ảo 3D năm 2016 của Mỹ sản xuất bởi Walt Disney Animation Studios và phát hành bởi Walt Disney Pictures.</p>
+                <div class="caption-actions">
+                  <a href="#" class="btn-hero-primary" data-bs-toggle="modal" data-bs-target="#authModal">
+                    <i class="bi bi-ticket-perforated"></i> Mua Vé Ngay
+                  </a>
+                  <a href="#" class="btn-hero-outline">
+                    <i class="bi bi-play-circle"></i> Xem Trailer
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="../25050011_tranminhhieu_tuan9_10_images/tho.jpg" alt="Horror"/>
+              <div class="carousel-caption-custom">
+                <span class="caption-badge">18+</span>
+                <h2 class="caption-title">Thỏ ơi</h2>
+                <div class="caption-meta">
+                  <span class="caption-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i><i class="bi bi-star"></i></span>
+                  <span class="dot">•</span> 207 Phút <span class="dot">•</span> Tâm lý, gia đình, tình yêu
+                </div>
+                <p class="caption-desc">Thỏ ơi!! là một bộ phim điện ảnh Việt Nam thuộc thể loại lãng mạn – giật gân – chính kịch ra mắt vào năm 2026 do Trấn Thành làm đạo diễn, viết kịch bản và đồng sản xuất, lấy cảm hứng từ những câu chuyện tình yêu có thật được khai thác theo góc nhìn cá nhân của anh.</p>
+                <div class="caption-actions">
+                  <a href="#" class="btn-hero-primary" data-bs-toggle="modal" data-bs-target="#authModal">
+                    <i class="bi bi-ticket-perforated"></i> Mua Vé Ngay
+                  </a>
+                  <a href="#" class="btn-hero-outline">
+                    <i class="bi bi-play-circle"></i> Xem Trailer
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="booking-panel">
+          <div class="booking-panel-title"><i class="bi bi-calendar-check"></i> Đặt Vé Nhanh</div>
+          <div class="booking-panel-sub">3 bước đơn giản để mua vé</div>
+
+          <label class="booking-label">Tìm theo ngày</label>
+          <select class="booking-select">
+            <option>Hôm nay - 09/10</option>
+            <option>Thứ 6 - 10/10</option>
+            <option>Thứ 7 - 11/10</option>
+            <option>Chủ nhật - 12/10</option>
+          </select>
+
+          <label class="booking-label">Chọn rạp</label>
+          <select class="booking-select">
+            <option>-- Chọn rạp --</option>
+            <option>Star Cinema Quận 1</option>
+            <option>Star Cinema Quận 3</option>
+            <option>Star Cinema Bình Thạnh</option>
+            <option>Star Cinema Thủ Đức</option>
+          </select>
+
+          <label class="booking-label">Chọn phim</label>
+          <select class="booking-select">
+            <option>-- Chọn phim --</option>
+            <option>Venom: Kẻ Thù Cuối Cùng</option>
+            <option>Joker: Điên Loạn Hai</option>
+            <option>Ngôi Nhà Bí Ẩn</option>
+            <option>Chuyến Bay Bão Tố</option>
+          </select>
+
+          <label class="booking-label">Suất chiếu</label>
+          <select class="booking-select">
+            <option>-- Chọn suất --</option>
+            <option>09:00</option>
+            <option>11:30</option>
+            <option>14:00</option>
+            <option>19:00</option>
+            <option>21:30</option>
+          </select>
+
+          <button class="btn-book-now" onclick="if(document.querySelector('.booking-select').value.includes('--')) { showToast('Lỗi', 'Vui lòng chọn đầy đủ thông tin đặt vé', 'error'); } else { var modal = new bootstrap.Modal(document.getElementById('authModal')); modal.show(); }">
+            Tiếp Tục <i class="bi bi-arrow-right ms-1"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<section class="section-movie">
+  <div class="container-fluid px-4">
+    
+    <div class="section-header reveal">
+      <h3 class="section-title">Phim Nổi Bật</h3>
+    </div>
+    <div class="movie-tabs-wrap reveal">
+      <ul class="nav movie-tabs" id="movieTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#nowShowing" type="button" role="tab">
+            Đang Chiếu
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#comingSoon" type="button" role="tab">
+            Sắp Chiếu
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#special" type="button" role="tab">
+            Đặc Sắc
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div class="tab-content" id="movieTabsContent">
+      <div class="tab-pane fade show active" id="nowShowing" role="tabpanel">
+        <div class="row">
+          
+          <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 reveal">
+            <div class="movie-card">
+              <span class="movie-badge"><span class="age-badge c18">13+</span></span>
+              <span class="hot-badge">HOT</span>
+              <div class="movie-img-wrap">
+                <img src="../25050011_tranminhhieu_tuan9_10_images/venomanhbia.jpeg" alt="Venom"/>
+                <div class="movie-rating-bar">
+                  <span class="movie-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></span>
+                  <span class="movie-score">9.2</span>
+                </div>
+                <div class="movie-overlay">
+                  <a href="#" class="play-btn"><i class="bi bi-play-fill"></i></a>
+                  <div class="overlay-actions">
+                    <a href="#" class="btn-ticket" data-bs-toggle="modal" data-bs-target="#authModal">Mua Vé</a>
+                    <a href="#" class="btn-wishlist"><i class="bi bi-heart"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="movie-card-body">
+                <div class="movie-card-title">Venom The Last Dance</div>
+                <div class="movie-card-meta">Hành động <span class="meta-dot"></span> 109 phút</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 reveal">
+            <div class="movie-card">
+              <span class="movie-badge"><span class="age-badge c18">16+</span></span>
+              <div class="movie-img-wrap">
+                <img src="../25050011_tranminhhieu_tuan9_10_images/tai.jpg" alt="Joker"/>
+                <div class="movie-rating-bar">
+                  <span class="movie-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i></span>
+                  <span class="movie-score">8.5</span>
+                </div>
+                <div class="movie-overlay">
+                  <a href="#" class="play-btn"><i class="bi bi-play-fill"></i></a>
+                  <div class="overlay-actions">
+                    <a href="#" class="btn-ticket" data-bs-toggle="modal" data-bs-target="#authModal">Mua Vé</a>
+                    <a href="#" class="btn-wishlist"><i class="bi bi-heart"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="movie-card-body">
+                <div class="movie-card-title">TÀI</div>
+                <div class="movie-card-meta">Hành động, tình cảm <span class="meta-dot"></span> 101 phút</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 reveal">
+            <div class="movie-card">
+              <span class="movie-badge"><span class="age-badge c18">18+</span></span>
+              <div class="movie-img-wrap">
+                <img src="../25050011_tranminhhieu_tuan9_10_images/tho3.jpeg" alt="Horror"/>
+                <div class="movie-rating-bar">
+                  <span class="movie-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i><i class="bi bi-star"></i></span>
+                  <span class="movie-score">7.8</span>
+                </div>
+                <div class="movie-overlay">
+                  <a href="#" class="play-btn"><i class="bi bi-play-fill"></i></a>
+                  <div class="overlay-actions">
+                    <a href="#" class="btn-ticket" data-bs-toggle="modal" data-bs-target="#authModal">Mua Vé</a>
+                    <a href="#" class="btn-wishlist"><i class="bi bi-heart"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="movie-card-body">
+                <div class="movie-card-title">Thỏ ơi!!</div>
+                <div class="movie-card-meta">Tâm lý, tình yêu<span class="meta-dot"></span> 207 phút</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 reveal">
+            <div class="movie-card">
+              <span class="movie-badge"><span class="age-badge c13">Mọi lứa tuổi</span></span>
+              <div class="movie-img-wrap">
+                <img src="../25050011_tranminhhieu_tuan9_10_images/doraemon.jpg" alt="Action"/>
+                <div class="movie-rating-bar">
+                  <span class="movie-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i></span>
+                  <span class="movie-score">8.0</span>
+                </div>
+                <div class="movie-overlay">
+                  <a href="#" class="play-btn"><i class="bi bi-play-fill"></i></a>
+                  <div class="overlay-actions">
+                    <a href="#" class="btn-ticket" data-bs-toggle="modal" data-bs-target="#authModal">Mua Vé</a>
+                    <a href="#" class="btn-wishlist"><i class="bi bi-heart"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="movie-card-body">
+                <div class="movie-card-title">Doraemon 2025: Nobita và Câu Chuyện Về Thế Giới Tranh Ảnh</div>
+                <div class="movie-card-meta">Hoạt hình<span class="meta-dot"></span> 145 phút</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 reveal">
+            <div class="movie-card">
+              <span class="movie-badge"><span class="age-badge c13">Mọi lứa tuổi</span></span>
+              <div class="movie-img-wrap">
+                <img src="../25050011_tranminhhieu_tuan9_10_images/moana3.jpg" alt="Robot"/>
+                <div class="movie-rating-bar">
+                  <span class="movie-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></span>
+                  <span class="movie-score">8.9</span>
+                </div>
+                <div class="movie-overlay">
+                  <a href="#" class="play-btn"><i class="bi bi-play-fill"></i></a>
+                  <div class="overlay-actions">
+                    <a href="#" class="btn-ticket" data-bs-toggle="modal" data-bs-target="#authModal">Mua Vé</a>
+                    <a href="#" class="btn-wishlist"><i class="bi bi-heart"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="movie-card-body">
+                <div class="movie-card-title">Moana</div>
+                <div class="movie-card-meta">Hoạt hình <span class="meta-dot"></span> 107 phút</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 reveal">
+            <div class="movie-card">
+              <span class="movie-badge"><span class="age-badge c16">16+</span></span>
+              <div class="movie-img-wrap">
+                <img src="../25050011_tranminhhieu_tuan9_10_images/tuchientrenkhong.jpg" alt="Fantasy"/>
+                <div class="movie-rating-bar">
+                  <span class="movie-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i><i class="bi bi-star"></i></span>
+                  <span class="movie-score">7.5</span>
+                </div>
+                <div class="movie-overlay">
+                  <a href="#" class="play-btn"><i class="bi bi-play-fill"></i></a>
+                  <div class="overlay-actions">
+                    <a href="#" class="btn-ticket" data-bs-toggle="modal" data-bs-target="#authModal">Mua Vé</a>
+                    <a href="#" class="btn-wishlist"><i class="bi bi-heart"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="movie-card-body">
+                <div class="movie-card-title">Tử Chiến Trên Không</div>
+                <div class="movie-card-meta">Bạo lực, Nguy hiểm<span class="meta-dot"></span> 158 phút</div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      <div class="tab-pane fade" id="comingSoon" role="tabpanel">
+        <div class="row">
+          <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+            <div class="movie-card coming-soon-card">
+              <span class="movie-badge"><span class="age-badge c16">C16</span></span>
+              <div class="movie-img-wrap">
+                <div class="coming-soon-label"><span class="coming-date">01/11/2024</span></div>
+                <img src="../25050011_tranminhhieu_tuan9_10_images/coming1.jpg" alt="Coming1"/>
+                <div class="movie-overlay">
+                  <a href="#" class="play-btn"><i class="bi bi-play-fill"></i></a>
+                  <div class="overlay-actions">
+                    <a href="#" class="btn-wishlist"><i class="bi bi-heart"></i> Mở bán sau</a>
+                  </div>
+                </div>
+              </div>
+              <div class="movie-card-body">
+                <div class="movie-card-title">Chiến Binh Huyền Thoại</div>
+                <div class="movie-card-meta">Hành động <span class="meta-dot"></span> Sắp chiếu</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="special" role="tabpanel">
+        <div class="row">
+          <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+            <div class="movie-card">
+              <span class="movie-badge"><span class="age-badge c13">C13</span></span>
+              <div class="movie-img-wrap">
+                <img src="../25050011_tranminhhieu_tuan9_10_images/avengers.jpg" alt="Avengers"/>
+                <div class="movie-overlay">
+                  <a href="#" class="play-btn"><i class="bi bi-play-fill"></i></a>
+                  <div class="overlay-actions">
+                    <a href="#" class="btn-ticket" data-bs-toggle="modal" data-bs-target="#authModal">Mua Vé</a>
+                  </div>
+                </div>
+              </div>
+              <div class="movie-card-body">
+                <div class="movie-card-title">Avengers: Endgame (Chiếu Lại)</div>
+                <div class="movie-card-meta">Hành động <span class="meta-dot"></span> 181 phút</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="container-fluid px-4">
+    <div class="row">
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="logo-wrap" style="padding:0 0 15px;">
+          <div class="logo-icon-wrap" style="transform: scale(0.8); transform-origin: left;">
+            <div class="logo-ring">★</div>
+          </div>
+          <div class="logo-text-wrap">
+            <div class="logo-name"><span>Star</span> Cinema</div>
+          </div>
+        </div>
+        <div class="footer-brand">
+          <p>Hệ thống rạp chiếu phim hiện đại nhất Việt Nam. Trải nghiệm điện ảnh đẳng cấp với công nghệ âm thanh IMAX và hình ảnh 4K tiên tiến.</p>
+        </div>
+        <div class="footer-social">
+          <a href="#" class="social-btn"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-youtube"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="social-btn"><i class="bi bi-tiktok"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6 mb-4">
+        <h6>Về Chúng Tôi</h6>
+        <a href="#">Giới thiệu Star Cinema</a>
+        <a href="#">Tuyển dụng</a>
+        <a href="#">Điều khoản sử dụng</a>
+        <a href="#">Chính sách bảo mật</a>
+      </div>
+      <div class="col-lg-2 col-md-6 mb-4">
+        <h6>Dịch Vụ</h6>
+        <a href="#">Mua vé trực tuyến</a>
+        <a href="#">Thẻ thành viên Star</a>
+        <a href="#">Khuyến mãi mới</a>
+        <a href="#">Phòng chiếu IMAX & VIP</a>
+      </div>
+      <div class="col-lg-2 col-md-6 mb-4">
+        <h6>Hệ Thống Rạp</h6>
+        <a href="#">Star Cinema Quận 1</a>
+        <a href="#">Star Cinema Quận 3</a>
+        <a href="#">Star Cinema Bình Thạnh</a>
+        <a href="#">Star Cinema Thủ Đức</a>
+        <a href="#">Xem tất cả rạp...</a>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <h6>Hỗ Trợ Khách Hàng</h6>
+        <div class="footer-hotline">
+          <div class="hotline-icon"><i class="bi bi-headset"></i></div>
+          <div class="hotline-info">
+            <div class="hotline-label">Chăm sóc khách hàng</div>
+            <div class="hotline-num">1900 6017</div>
+          </div>
+        </div>
+        <a href="#">Câu hỏi thường gặp (FAQ)</a>
+        <a href="#">Liên hệ & Góp ý</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2024 Star Cinema. All rights reserved. Designed with passion.
+    </div>
+  </div>
+</footer>
+<div class="modal fade modal-auth" id="authModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-auth-header">
+        <button type="button" class="modal-close-btn" data-bs-dismiss="modal">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <div class="auth-tab-switch">
+        <button class="auth-tab-btn active" onclick="switchAuthTab('login', this)">Đăng Nhập</button>
+        <span class="auth-tab-divider">/</span>
+        <button class="auth-tab-btn" onclick="switchAuthTab('register', this)">Đăng Ký</button>
+      </div>
+      <div class="modal-body">
+        <div id="loginForm">
+          <p class="form-login-desc">
+            Vui lòng đăng nhập để tích luỹ điểm thưởng và nhận các ưu đãi đặc quyền từ Star Cinema.
+          </p>
+          <input id="loginEmail" type="email" class="auth-input" placeholder="Email của bạn"/>
+          <input id="loginPassword" type="password" class="auth-input" placeholder="Mật khẩu"/>
+          
+          <a href="#" class="forgot-link">Quên mật khẩu?</a>
+          
+          <button class="btn-auth-submit" onclick="handleLogin()">
+            Đăng Nhập <i class="bi bi-arrow-right-circle ms-1"></i>
+          </button>
+        </div>
+        <div id="registerForm" style="display:none;">
+          <input id="regName" type="text" class="auth-input" placeholder="Họ tên đầy đủ"/>
+          
+          <div class="auth-input-row">
+            <input id="regPhone" type="tel" class="auth-input" placeholder="Số điện thoại"/>
+            <select class="auth-select" style="flex: 0.6;">
+              <option value="">Giới tính</option>
+              <option>Nam</option>
+              <option>Nữ</option>
+            </select>
+          </div>
+          
+          <input id="regEmail" type="email" class="auth-input" placeholder="Email"/>
+          
+          <div class="auth-input-row">
+            <input id="regPassword" type="password" class="auth-input" placeholder="Mật khẩu"/>
+            <input id="regConfirm" type="password" class="auth-input" placeholder="Xác nhận MK"/>
+          </div>
+          
+          <div class="auth-input-row">
+            <select class="auth-select">
+              <option value="">Tỉnh/Thành phố</option>
+              <option>Hồ Chí Minh</option>
+              <option>Hà Nội</option>
+            </select>
+            <select class="auth-select">
+              <option value="">Quận/Huyện</option>
+              <option>Quận 1</option>
+              <option>Quận 3</option>
+            </select>
+          </div>
+          <div class="captcha-row">
+            <div class="captcha-display" id="captchaDisplay">------</div>
+            <button class="btn-refresh-captcha" onclick="refreshCaptcha()" title="Tải lại mã">
+              <i class="bi bi-arrow-repeat"></i>
+            </button>
+            <input id="captchaInput" type="text" class="auth-input mb-0" placeholder="Nhập mã bên trái"/>
+          </div>
+          
+          <p class="policy-text">
+            Bằng việc đăng ký, bạn đã đồng ý với <a href="#">Điều khoản bảo mật</a> của chúng tôi.
+          </p>
+          <button class="btn-auth-submit" onclick="handleRegister()">
+            Tạo Tài Khoản
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../25050011_tranminhhieu_tuan9_10_js/scriptbai3.js"></script>
+</body>
+</html>

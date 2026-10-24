@@ -1,0 +1,620 @@
+:root {
+  --color-charcoal: #20242b;
+  --color-charcoal-glass: rgba(32, 36, 43, 0.88);
+  --color-cyan: #00aced;
+  --color-cyan-hover: #0093cc;
+  --color-restaurant-bg: #074452;
+  --color-pink-btn: #eb1460;
+  --color-pink-hover: #d20e53;
+  --color-terrace-btn: #0b596d;
+  --color-terrace-hover: #0e6c84;
+  --color-magazine-bg: #baa7e5;
+  --color-dark: #1f2227;
+  --transition-smooth: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #2e384d;
+  background-color: #0b1118;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+.nav-spacer {
+  height: 68px;
+}
+.bg-charcoal {
+  background-color: var(--color-charcoal-glass) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.3s ease, background-color 0.35s ease, padding 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Smart Auto-hide Navbar state */
+.custom-navbar.navbar-hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.custom-navbar.scrolled {
+  background-color: rgba(18, 21, 26, 0.97) !important;
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.brand-logo-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.custom-navbar .navbar-brand {
+  font-size: 0.92rem;
+  letter-spacing: 1.2px;
+  color: #ffffff !important;
+  transition: var(--transition-smooth);
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+}
+
+.custom-navbar .navbar-brand:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: scale(1.02);
+}
+
+/* Nav links: Tăng kích thước vùng bấm, font chữ rõ ràng, dễ thao tác */
+.custom-navbar .nav-link {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #cbd5e1 !important;
+  letter-spacing: 0.5px;
+  padding: 0.65rem 1rem !important;
+  border-radius: 8px;
+  transition: all 0.22s ease;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-1px);
+}
+
+.custom-navbar .nav-link.active {
+  color: #ffffff !important;
+  background: rgba(0, 172, 237, 0.22);
+  box-shadow: inset 0 0 0 1px rgba(0, 172, 237, 0.45), 0 2px 10px rgba(0, 172, 237, 0.25);
+}
+
+/* Dropdown Caret Icon: Xoay mượt 180 độ khi mở */
+.dropdown-toggle::after {
+  display: inline-block;
+  margin-left: 0.45em;
+  vertical-align: 0.15em;
+  content: "";
+  border-top: 0.32em solid;
+  border-right: 0.32em solid transparent;
+  border-bottom: 0;
+  border-left: 0.32em solid transparent;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdown-toggle[aria-expanded="true"]::after,
+.dropdown.show .dropdown-toggle::after {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Menu: Hiệu ứng ẩn/hiện mượt mà cả lúc mở và lúc đóng/ẩn khi click ra ngoài trang */
+.dropdown-menu-animated {
+  display: block !important;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(10px) scale(0.97);
+  transform-origin: top center;
+  transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s ease;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  background-color: rgba(26, 30, 38, 0.97) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 0.55rem;
+  min-width: 220px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  margin-top: 8px !important;
+}
+
+/* Khi đang mở */
+.dropdown-menu-animated.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+/* Dropdown Items: Vùng bấm rộng rãi, chuyển động trượt ngang khi hover */
+.dropdown-item {
+  border-radius: 8px;
+  font-size: 0.86rem;
+  padding: 0.65rem 1rem;
+  font-weight: 500;
+  color: #e2e8f0;
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: rgba(0, 172, 237, 0.14);
+  transform: translateX(5px);
+  color: #38bdf8 !important;
+}
+
+.dropdown-item:active {
+  background-color: #00aced;
+  color: #ffffff !important;
+}
+
+.dropdown-divider {
+  border-color: rgba(255, 255, 255, 0.08);
+  margin: 0.4rem 0;
+}
+
+/* Nút Download Now: Bo tròn hiện đại, dễ bấm */
+.btn-download {
+  position: relative;
+  background: linear-gradient(135deg, #00aced, #0077b6);
+  color: #ffffff !important;
+  font-size: 0.82rem;
+  letter-spacing: 0.6px;
+  border-radius: 50px;
+  border: none;
+  overflow: hidden;
+  padding: 0.65rem 1.25rem !important;
+  box-shadow: 0 4px 16px rgba(0, 172, 237, 0.4);
+  transition: var(--transition-smooth);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-download:hover {
+  background: linear-gradient(135deg, #00bafe, #008cd2);
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 172, 237, 0.6);
+}
+
+.btn-download:active {
+  transform: translateY(0);
+}
+
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(25deg);
+  animation: shimmerEffect 4s infinite ease-in-out;
+}
+
+@keyframes shimmerEffect {
+  0% { left: -60%; }
+  35%, 100% { left: 140%; }
+}
+.ambient-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.35;
+}
+
+.ambient-restaurant {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, #00bcd4, #005662);
+  top: -100px;
+  right: -50px;
+}
+
+.ambient-magazine {
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, #ffffff, #8b5cf6);
+  top: -80px;
+  left: -80px;
+}
+.image-card-container {
+  position: relative;
+  z-index: 2;
+  perspective: 1000px;
+}
+
+.hover-lift {
+  transition: transform 0.45s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.image-card-container:hover .hover-lift {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5) !important;
+}
+
+.floating-badge {
+  position: absolute;
+  z-index: 4;
+  background: rgba(22, 27, 34, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  animation: floatUpDown 3.5s infinite ease-in-out;
+}
+
+.badge-top-left {
+  top: 16px;
+  left: 16px;
+}
+
+.badge-bottom-right {
+  bottom: 16px;
+  right: 16px;
+  animation-delay: 1.5s;
+}
+
+.badge-top-right {
+  top: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #1f2227;
+}
+
+@keyframes floatUpDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.restaurant-hero {
+  background: radial-gradient(circle at 80% 20%, #0d5565 0%, #063945 60%, #042a33 100%);
+  min-height: 540px;
+}
+
+.restaurant-title {
+  color: #ffffff;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.title-underline {
+  width: 70px;
+  height: 3px;
+  background: linear-gradient(90deg, #ff9800, #e91e63);
+  border-radius: 2px;
+  margin-top: 8px;
+}
+
+.btn-new-menu {
+  background: linear-gradient(135deg, var(--color-pink-btn), #c2185b);
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(235, 20, 96, 0.35);
+  transition: var(--transition-smooth);
+}
+
+.btn-new-menu:hover {
+  background: linear-gradient(135deg, #ff2373, #d81b60);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(235, 20, 96, 0.55);
+}
+
+.btn-new-menu:hover .transition-arrow {
+  transform: translateX(5px);
+}
+
+.transition-arrow {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+.btn-terrace {
+  background-color: var(--color-terrace-btn);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  transition: var(--transition-smooth);
+}
+
+.btn-terrace:hover {
+  background-color: var(--color-terrace-hover);
+  border-color: rgba(255, 255, 255, 0.8);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(11, 89, 109, 0.45);
+}
+
+.restaurant-desc-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  max-width: 480px;
+}
+
+.restaurant-description {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.feature-tag {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e2e8f0;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+.magazine-sale-section {
+  background: linear-gradient(135deg, #c7b4f5 0%, #b29fe0 50%, #a48ed6 100%);
+  min-height: 500px;
+}
+
+.magazine-title {
+  color: #17181c;
+  font-size: 2.9rem;
+  letter-spacing: 4px;
+  font-weight: 800;
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.4);
+}
+
+.magazine-subtitle {
+  color: #2b2c34;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.btn-order-now {
+  color: #18191d;
+  background-color: transparent;
+  border: 2px solid #18191d;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  padding: 10px 42px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: var(--transition-smooth);
+}
+
+.btn-order-now:hover {
+  background-color: #18191d;
+  color: #ffffff;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(24, 25, 29, 0.35);
+}
+
+.perk-item {
+  background: rgba(255, 255, 255, 0.4);
+  padding: 8px 14px;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: var(--transition-smooth);
+}
+
+.perk-item:hover {
+  background: rgba(255, 255, 255, 0.7);
+  transform: translateY(-2px);
+}
+
+.extra-small {
+  font-size: 0.72rem;
+}
+.magazine-highlight-banner {
+  position: relative;
+  min-height: 280px;
+  background-color: #2b3036;
+  background-image: url('https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center 60%;
+  overflow: hidden;
+}
+
+.road-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(22, 27, 34, 0.75) 0%, rgba(22, 27, 34, 0.85) 100%);
+  z-index: 1;
+}
+.road-divider-line {
+  position: absolute;
+  top: 35%;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.6) 0,
+    rgba(255, 255, 255, 0.6) 80px,
+    transparent 80px,
+    transparent 150px
+  );
+  z-index: 2;
+}
+
+.animate-road {
+  animation: roadMove 4s linear infinite;
+  background-size: 150px 8px;
+}
+
+@keyframes roadMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 150px 0; }
+}
+
+.highway-title {
+  letter-spacing: 5px;
+  font-weight: 900;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.85);
+  z-index: 3;
+  position: relative;
+}
+
+.letter-spacing-1 {
+  letter-spacing: 1px;
+}
+
+.letter-spacing-2 {
+  letter-spacing: 2px;
+}
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #adb5bd;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.social-icon:hover {
+  background: var(--color-cyan);
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 172, 237, 0.4);
+}
+.btn-back-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00aced, #0077b6);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 8px 24px rgba(0, 172, 237, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 1070;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.7);
+  transition: var(--transition-smooth);
+}
+
+.btn-back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.btn-back-to-top:hover {
+  background: linear-gradient(135deg, #00c0ff, #008cd2);
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 12px 28px rgba(0, 172, 237, 0.6);
+}
+.custom-toast {
+  background: rgba(26, 32, 44, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  color: #ffffff;
+}
+@media (max-width: 991px) {
+  .dropdown-menu-animated {
+    display: none !important;
+    opacity: 0;
+    visibility: hidden;
+    transform: none;
+    background-color: rgba(255, 255, 255, 0.05);
+    margin-top: 0.35rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .dropdown-menu-animated.show {
+    display: block !important;
+    opacity: 1;
+    visibility: visible;
+    animation: mobileMenuFade 0.22s ease-out;
+  }
+  @keyframes mobileMenuFade {
+    from {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .navbar-collapse {
+    background: rgba(22, 25, 31, 0.98);
+    padding: 1rem;
+    border-radius: 12px;
+    margin-top: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+}
+
+@media (max-width: 768px) {
+  .btn-new-menu,
+  .btn-terrace {
+    width: 85% !important;
+  }
+  
+  .magazine-title {
+    font-size: 2.1rem;
+    letter-spacing: 2px;
+  }
+
+  .highway-title {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+
+  .ambient-glow {
+    display: none;
+  }
+}

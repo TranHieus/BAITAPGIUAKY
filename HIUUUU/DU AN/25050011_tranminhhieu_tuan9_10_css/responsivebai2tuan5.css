@@ -1,0 +1,96 @@
+@media (max-width: 992px) {
+  .food_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about_container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about_detail_box {
+    text-align: center;
+  }
+
+  .book_container {
+    grid-template-columns: 1fr;
+  }
+
+  .footer_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  .nav-menu-wrapper {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-color: var(--dark-bg);
+    flex-direction: column;
+    padding: 30px 20px;
+    transition: left 0.35s ease;
+    overflow-y: auto;
+    z-index: 999;
+  }
+
+  .nav-menu-wrapper.active {
+    left: 0;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .user_option {
+    margin-top: 25px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .slider-content h1 {
+    font-size: 40px;
+  }
+
+  .heading_container h2,
+  .about_detail_box h2,
+  .book_heading h2 {
+    font-size: 34px;
+  }
+
+  .food_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer_grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer_contact_list li {
+    justify-content: center;
+  }
+
+  .footer_social {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider-content h1 {
+    font-size: 32px;
+  }
+
+  .order_modal_dialog {
+    margin: 10px;
+  }
+}
